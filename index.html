@@ -7,6 +7,7 @@
 -->
     <title>Harrow School Societies Fair</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -70,7 +71,7 @@
       }
 
       #map {
-        width: 100vw;
+        width: 100%;
         height: 600px;
       }
 
@@ -81,69 +82,118 @@
         background-color: #001844;
       }
       * {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
       }
       .navbar-title {
         font-weight: 500;
         font-size: 2rem;
-        color:white;
+        color: white;
+      }
+
+      main > .container {
+        padding: 60px 15px 0;
       }
       body {
         background-color: #f5f5f5;
       }
+      html {
+        height: 100%;
+      }
     </style>
   </head>
-  <body>
-    <nav class="navbar bg-harrowblue">
-      <div class="container-fluid">
-        <h1 class="navbar-title mx-auto">
-          Harrow School Societies Fair 2022
-        </h1>
-      </div>
-    </nav>
+  <!-- <body class="d-flex flex-column h-100">
+    <header>
+      <nav class="navbar  navbar-expand-md fixed-top">
+        
+      </nav>
+    </header>
 
-    <!-- DIV pour la carte -->
-    <main>
-      <div id="map" class="map p-3"></div>
+    <main class="flex-shrink-0">
+      
     </main>
 
-    <script type="text/javascript">
-      // The map
-      var map = new ol.Map({
-        target: "map",
-        view: new ol.View({
-          zoom: 21,
-          center: [-37462.194786566186, 6723109.878285455],
-          rotation: 1.17,
-        }),
-        layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
-      });
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+      </div>
+    </footer>
 
-      var geoimg = new ol.layer.GeoImage({
-        name: "Georef",
-        opacity: 1,
-        source: new ol.source.GeoImage({
-          url: "/map.jpg",
-          imageCenter: [-37462.194786566186, 6723109.878285455],
-          imageScale: [0.06, 0.06],
-          imageCrop: [0, 0, 5526, 5000],
-          //imageMask: [[273137.343,6242443.14],[273137.343,6245428.14],[276392.157,6245428.14],[276392.157,6242443.14],[273137.343,6242443.14]],
-          imageRotate: Number((293 * Math.PI) / 180),
-          projection: "EPSG:3857",
-        }),
-      });
-      map.addLayer(geoimg);
+  </body> -->
 
-      function resetSource() {
-        geoimg.getSource().setCenter([x, y]);
-        geoimg.getSource().setRotation(($("#rotate").val() * Math.PI) / 180);
-        geoimg.getSource().setScale([sx, sy]);
-        geoimg.getSource().setCrop([xmin, ymin, xmax, ymax]);
-        var crop = geoimg.getSource().getCrop();
-      }
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md bg-harrowblue fixed-top">
+        <div class="container-fluid">
+          <h1 class="navbar-title mx-auto">
+            Harrow School Societies Fair 2022
+          </h1>
+        </div>
+      </nav>
+    </header>
 
-      // Show extent in the layerswitcher
-      //   map.addControl(new ol.control.LayerSwitcher({ extent:true }));
-    </script>
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <div class="container">
+        <div id="map" class="map p-3"></div>
+      </div>
+      
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <div class="row mb-3 text-center">
+          <div class="col-md-12">
+            <div class="pb-3">
+              .col-md-8
+            </div>
+            <div class="row">
+              <div class="col-md-6 ">.col-md-6</div>
+              <div class="col-md-6">.col-md-6</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
   </body>
 </html>
+
+<script type="text/javascript">
+  // The map
+  var map = new ol.Map({
+    target: "map",
+    view: new ol.View({
+      zoom: 21,
+      center: [-37462.194786566186, 6723109.878285455],
+      rotation: 1.17,
+    }),
+    layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
+  });
+
+  var geoimg = new ol.layer.GeoImage({
+    name: "Georef",
+    opacity: 1,
+    source: new ol.source.GeoImage({
+      url: "/map.jpg",
+      imageCenter: [-37462.194786566186, 6723109.878285455],
+      imageScale: [0.06, 0.06],
+      imageCrop: [0, 0, 5526, 5000],
+      //imageMask: [[273137.343,6242443.14],[273137.343,6245428.14],[276392.157,6245428.14],[276392.157,6242443.14],[273137.343,6242443.14]],
+      imageRotate: Number((293 * Math.PI) / 180),
+      projection: "EPSG:3857",
+    }),
+  });
+  map.addLayer(geoimg);
+
+  function resetSource() {
+    geoimg.getSource().setCenter([x, y]);
+    geoimg.getSource().setRotation(($("#rotate").val() * Math.PI) / 180);
+    geoimg.getSource().setScale([sx, sy]);
+    geoimg.getSource().setCrop([xmin, ymin, xmax, ymax]);
+    var crop = geoimg.getSource().getCrop();
+  }
+
+  // Show extent in the layerswitcher
+  //   map.addControl(new ol.control.LayerSwitcher({ extent:true }));
+</script>
