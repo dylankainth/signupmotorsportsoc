@@ -7,7 +7,7 @@
 -->
     <title>Harrow School Societies Fair</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -42,8 +42,6 @@
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL,Object.assign"></script>
 
     <!-- ol-ext -->
-
-    <!-- ol-ext -->
     <link
       rel="stylesheet"
       href="https://cdn.rawgit.com/Viglino/ol-ext/master/dist/ol-ext.min.css"
@@ -59,6 +57,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -99,6 +101,12 @@
       html {
         height: 100%;
       }
+      .credits {
+        font-family: "Poppins";
+      }
+      .credittitle {
+        font-size: 1.5rem
+      }
     </style>
   </head>
   <!-- <body class="d-flex flex-column h-100">
@@ -133,27 +141,43 @@
     </header>
 
     <!-- Begin page content -->
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0 pt-5">
       <div class="container">
         <div id="map" class="map p-3"></div>
       </div>
-      
     </main>
 
     <footer class="footer mt-auto py-3">
       <div class="container">
-        <div class="row mb-3 text-center">
-          <div class="col-md-12">
-            <div class="pb-3">
-              .col-md-8
-            </div>
-            <div class="row">
-              <div class="col-md-6 ">.col-md-6</div>
-              <div class="col-md-6">.col-md-6</div>
-            </div>
-          </div>
+        <div class="pb-3 text-secondary text-center credittitle">
+          Event Organisers
+        </div> 
+
+        <div class="pb-3 text-secondary text-center">
+          June Hyun (W-L6), Antonio da Silveira Pinheiro (P-U6)
         </div>
 
+        <div class="pb-3 text-secondary text-center credittitle">
+          Website brought to you by
+        </div>
+
+        <a href="https://harrow-css.herokuapp.com" style="text-decoration:none">
+          <div class="row mb-3">
+            <div class="col-md-12">
+
+              <div class="row">
+                <div class="col-6 text-end">
+                  <img src="csslogogrey.png" class="my-auto" height="95rem" />
+                </div>
+                <div class="col-6 text-start credits text-secondary">
+                  The <br />Computer<br />
+                  Science<br />
+                  Society
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
       </div>
     </footer>
   </body>
@@ -166,7 +190,7 @@
     view: new ol.View({
       zoom: 21,
       center: [-37462.194786566186, 6723109.878285455],
-      rotation: 1.17,
+      rotation: -1.97,
     }),
     layers: [new ol.layer.Tile({ source: new ol.source.OSM() })],
   });
@@ -180,7 +204,7 @@
       imageScale: [0.06, 0.06],
       imageCrop: [0, 0, 5526, 5000],
       //imageMask: [[273137.343,6242443.14],[273137.343,6245428.14],[276392.157,6245428.14],[276392.157,6242443.14],[273137.343,6242443.14]],
-      imageRotate: Number((293 * Math.PI) / 180),
+      imageRotate: Number((113 * Math.PI) / 180),
       projection: "EPSG:3857",
     }),
   });
