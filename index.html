@@ -103,6 +103,22 @@
       .credittitle {
         font-size: 1.5rem
       }
+
+      /* for mobile */
+      @media (max-width: 767px) {
+        .mapposter{
+          min-width:100vw;
+        }
+      }
+      
+      /* for tablet and bigger */
+      @media (min-width: 768px) {
+        .mapposter{
+          max-width:50vw;
+        }
+      }
+
+      
     </style>
   </head>
   <!-- <body class="d-flex flex-column h-100">
@@ -138,9 +154,15 @@
 
     <main class="flex-shrink-0 pt-5">
       <div class="pb-3 text-secondary text-center credittitle">
-        Map Coming Soon
+        <img src="/floorplan071020231.png" class="img-fluid mapposter" style="margin-top:100px">
       </div> 
     </main>
+
+    <!-- <main class="flex-shrink-0 pt-5">
+      <div class="pb-3 text-secondary text-center credittitle">
+        Map Coming Soon
+      </div> 
+    </main> -->
 
     
 
@@ -193,7 +215,7 @@
         </a>
 
         <div class="pb-3 text-secondary text-center">
-          Last Updated 04/10/2023 @ 14:18
+          Last Updated 07/10/2023 @ 00:22
         </div>
 
 
@@ -201,7 +223,7 @@
     </footer>
   </body>
 </html>
-
+<!-- 
 <script type="text/javascript">
   // The map
   var map = new ol.Map({
@@ -239,4 +261,4 @@
 
   // Show extent in the layerswitcher
   //   map.addControl(new ol.control.LayerSwitcher({ extent:true }));
-</script>
+</script> -->
